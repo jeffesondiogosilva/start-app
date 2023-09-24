@@ -10,6 +10,8 @@ link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min
 link.rel = "stylesheet";
 document.head.appendChild(link);
 
+document.body.classList.add("bg-success");
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

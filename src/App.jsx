@@ -56,7 +56,7 @@ export const App = () => {
 
     return (
 
-        <div className="container form-group">
+        <div className="container form-group col-md-12 text-light">
 
 
             <h1>Palpites</h1>
@@ -64,36 +64,43 @@ export const App = () => {
             <input
                 type="text"
                 placeholder="Digite seu nome"
-                className="form-control p-1 m-3"
+                className="form-control p-1 m-3 col-md-2 w-25"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
             />
-            <input
-                type="number"
-                placeholder="Time1"
-                className="form-control p-1 m-3"
-                value={time1}
-                onChange={(e) => setTime1(e.target.value)}
-            />
-            <input
-                type="number"
-                placeholder="Time2"
-                className="form-control p-1 m-3"
-                value={time1}
-                onChange={(e) => setTime2(e.target.value)}
-            />
-            <button className="btn-primary" onClick={criarDado}>Criar dado</button>
+            <div className="d-flex">
+                <label className="p-2">São Paulo</label>
+                <input
+                    type="number"
+                    placeholder="PlacarTime1"
+                    className="form-control p-1 m-3 w-25"
+                    value={time1}
+                    onChange={(e) => setTime1(e.target.value)}
+                />
+            </div>
+            <div className="d-flex">
+                <label className="p-2">Flamengo</label>
+                <input
+                    type="number"
+                    placeholder="Placar Time2"
+                    className="form-control p-1 m-3 w-25"
+                    value={time2}
+                    onChange={(e) => setTime2(e.target.value)}
+                />
+            </div>
+            <button className="btn-primary" onClick={criarDado}>Enviar</button>
 
             <ul>
                 {placares.map((placar) => {
                     return (
                         <>
-                            <div className="d-flex flex-row">
-                                <h4 className="p-3">{placar.nome}</h4>
-                                <label>São Paulo</label>
-                                <input className="form-control" value={placar.time1} type="number" />
-                                <label>Flamengo</label>
-                                <input className="form-control" value={placar.time2} type="number" />
+                            <div className="d-flex flex-row col-md-6 ">
+                                <h3 className="p-3">{placar.nome}</h3>
+                                <label className="p-2">São Paulo</label>
+                                <p>{placar.time1} </p>
+                                <p> X </p>
+                                <p> {placar.time2}</p>
+                                <label className="p-2">Flamengo</label>
                                 <button className="btn-danger" onClick={() => deletePlacar(placar.id)}>Deletar</button>
                             </div>
                         </>
