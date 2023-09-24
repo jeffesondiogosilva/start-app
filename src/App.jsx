@@ -34,6 +34,7 @@ export const App = () => {
                 time1,
                 time2,
             });
+            window.location.reload();
 
             console.log("dados salvos com sucessos", placar);
         } catch (e) {
@@ -52,6 +53,7 @@ export const App = () => {
     async function deletePlacar(id) {
         const placarDoc = doc(db, "placares", id);
         await deleteDoc(placarDoc);
+        window.location.reload();
     }
 
     return (
@@ -88,24 +90,24 @@ export const App = () => {
                     onChange={(e) => setTime2(e.target.value)}
                 />
             </div>
-            <button className="btn-primary" onClick={criarDado}>Enviar</button>
+            <button className="btn-primary " onClick={criarDado} >Enviar</button>
 
-            <ul>
-                {placares.map((placar) => {
-                    return (
-                        <>
-                            <div className="d-flex flex-row col-md-6 ">
-                                <h3 className="p-3">{placar.nome}</h3>
-                                <label className="p-2">São Paulo</label>
-                                <p>{placar.time1} </p>
-                                <p> X </p>
-                                <p> {placar.time2}</p>
-                                <label className="p-2">Flamengo</label>
-                                <button className="btn-danger" onClick={() => deletePlacar(placar.id)}>Deletar</button>
-                            </div>
-                        </>
-                    );
-                })}
+            <ul className="pt-4">
+                {placares.map((placar) => (
+                    <li key={placar.id} className="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h3 className="m-0">{placar.nome}</h3>
+                            <p className="mb-0">
+                                {placar.time1} X {placar.time2}
+                            </p>
+                        </div>
+                        <div>
+                            <span className="badge bg-primary me-2">São Paulo</span>
+                            <span className="badge bg-danger">Flamengo</span>
+                        </div>
+                        <button className="btn btn-danger" onClick={() => deletePlacar(placar.id)}>Deletar</button>
+                    </li>
+                ))}
             </ul>
         </div>
     );
