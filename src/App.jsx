@@ -8,7 +8,7 @@ import {
     getDocs,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
