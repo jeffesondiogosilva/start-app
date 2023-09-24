@@ -72,7 +72,7 @@ export const App = () => {
                 <label className="p-2">São Paulo</label>
                 <input
                     type="number"
-                    placeholder="PlacarTime1"
+                    placeholder="Placar Time1"
                     className="form-control p-1 m-3 w-25"
                     value={time1}
                     onChange={(e) => setTime1(e.target.value)}
