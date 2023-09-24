@@ -61,15 +61,18 @@ export const App = () => {
         <div className="container form-group col-md-12 text-light">
 
 
-            <h1>Palpites</h1>
+            <h1 className="bg-primary p-1 mt-3 rounded-pill w-25 text-center">Rei dos Palpites</h1>
 
-            <input
-                type="text"
-                placeholder="Digite seu nome"
-                className="form-control p-1 m-3 col-md-2 w-25"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-            />
+            <div className="d-flex">
+                <label className="p-2">Nome</label>
+                <input
+                    type="text"
+                    placeholder="Digite seu nome"
+                    className="form-control p-1 m-3 col-md-2 w-25"
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                />
+            </div>
             <div className="d-flex">
                 <label className="p-2">São Paulo</label>
                 <input
@@ -90,7 +93,7 @@ export const App = () => {
                     onChange={(e) => setTime2(e.target.value)}
                 />
             </div>
-            <button className="btn-primary " onClick={criarDado} >Enviar</button>
+            <button className="btn-primary rounded" onClick={criarDado} >Enviar</button>
 
             <ul className="pt-4">
                 {placares.map((placar) => (
