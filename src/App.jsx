@@ -61,7 +61,7 @@ export const App = () => {
         <div className="container form-group col-md-12 text-light">
 
 
-            <h1 className="bg-primary p-1 mt-3 rounded-pill w-25 text-center">Rei dos Palpites</h1>
+            <h1 className="bg-primary p-1 mt-3 rounded w-25 text-center">Rei dos Palpites</h1>
 
             <div className="d-flex">
                 <label className="p-2">Nome</label>
