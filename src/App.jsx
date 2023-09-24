@@ -61,14 +61,14 @@ export const App = () => {
         <div className="container form-group col-md-12 text-light">
 
 
-            <h1 className="bg-primary p-1 mt-3 rounded w-25 text-center">Rei dos Palpites</h1>
+            <h1 className="bg-primary p-1 mt-3 rounded w-50 text-center">Rei dos Palpites</h1>
 
             <div className="d-flex">
                 <label className="p-2">Nome</label>
                 <input
                     type="text"
                     placeholder="Digite seu nome"
-                    className="form-control p-1 m-3 col-md-2 w-25"
+                    className="form-control p-1 m-3 col-md-2 w-50"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
                 />
@@ -78,7 +78,7 @@ export const App = () => {
                 <input
                     type="number"
                     placeholder="Placar Time1"
-                    className="form-control p-1 m-3 w-25"
+                    className="form-control p-1 m-3 w-50"
                     value={time1}
                     onChange={(e) => setTime1(e.target.value)}
                 />
@@ -88,14 +88,14 @@ export const App = () => {
                 <input
                     type="number"
                     placeholder="Placar Time2"
-                    className="form-control p-1 m-3 w-25"
+                    className="form-control p-1 m-3 w-50"
                     value={time2}
                     onChange={(e) => setTime2(e.target.value)}
                 />
             </div>
             <button className="btn-primary rounded" onClick={criarDado} >Enviar</button>
 
-            <ul className="pt-4">
+            <ul className="container pt-4">
                 {placares.map((placar) => (
                     <li key={placar.id} className="list-group-item d-flex justify-content-between align-items-center">
                         <div>
