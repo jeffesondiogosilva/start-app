@@ -10,8 +10,6 @@ import {
 import { useEffect, useState } from "react";
 
 
-
-
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyAQcgbDjCjA6UsPu3Lsu-3wcsajrf4O-zQ",
     authDomain: "start-app-cafc9.firebaseapp.com",
@@ -61,7 +59,7 @@ export const App = () => {
         <div className="container form-group col-md-12 text-light">
 
 
-            <h1 className="bg-primary p-1 mt-3 rounded w-50 text-center">Rei dos Palpites</h1>
+            <h1 className="bg-light text-primary p-1 mt-3 rounded w-50 text-center">Rei dos Palpites</h1>
 
             <div className="d-flex">
                 <label className="p-2">Nome</label>
@@ -74,7 +72,7 @@ export const App = () => {
                 />
             </div>
             <div className="d-flex">
-                <label className="p-2">São Paulo</label>
+                <label id="time1" className="p-2 ">Fluminense</label>
                 <input
                     type="number"
                     placeholder="Placar Time1"
@@ -84,7 +82,7 @@ export const App = () => {
                 />
             </div>
             <div className="d-flex">
-                <label className="p-2">Flamengo</label>
+                <label id="time2" className="p-2">Al Ahly</label>
                 <input
                     type="number"
                     placeholder="Placar Time2"
@@ -105,8 +103,8 @@ export const App = () => {
                             </p>
                         </div>
                         <div>
-                            <span className="badge bg-primary me-2">São Paulo</span>
-                            <span className="badge bg-danger">Flamengo</span>
+                            <span className="badge bg-primary me-2">Fluminense</span>
+                            <span className="badge bg-danger">Al Ahly</span>
                         </div>
                         <button className="btn btn-danger" onClick={() => deletePlacar(placar.id)}>Deletar</button>
                     </li>
